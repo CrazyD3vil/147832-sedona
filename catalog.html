@@ -24,27 +24,39 @@
       <form class="filter" action="https://echo.htmlacademy.ru" method="get">
         <fieldset class="filter-infrastructure">
           <legend>Инфраструктура:</legend>
-          <label for="pool">
-            <input id="pool" type="checkbox" name="infrastructure-pool" checked>Бассейн</label>
-          <label for="parking">
-            <input id="parking" type="checkbox" name="infrastructure-parking">Паркова</label>
-          <label for="wifi">
-            <input id="wifi" type="checkbox" name="infrastructure-wifi">Wi-fi</label>
+          <label for="pool">Бассейн</label>
+          <input id="pool" type="checkbox" name="infrastructure-pool" checked>
+          <label for="parking">Парковка</label>
+          <input id="parking" type="checkbox" name="infrastructure-parking">
+          <label for="wifi">Wi-fi</label>
+          <input id="wifi" type="checkbox" name="infrastructure-wifi">
         </fieldset>
         <fieldset class="filter-accommodation">
           <legend>Тип жилья:</legend>
-          <label for="hotel">
-            <input id="hotel" type="checkbox" name="accommodation-hotel" checked>Гостиница</label>
-          <label for="motel">
-            <input id="motel" type="checkbox" name="accommodation-motel" checked>Мотель</label>
-          <label for="apartments">
-            <input id="apartments" type="checkbox" name="accommodation-apartments" checked>Апартаменты</label>
+          <label for="hotel">Гостиница</label>
+          <input id="hotel" type="checkbox" name="accommodation-hotel" checked>
+          <label for="motel">Мотель</label>
+          <input id="motel" type="checkbox" name="accommodation-motel" checked>
+          <label for="apartments">Апартаменты</label>
+          <input id="apartments" type="checkbox" name="accommodation-apartments" checked>
         </fieldset>
-        <div class="filter-price">
-          <label for="price-ranger">Стоимость в сутки (Р):</label>
-          <!-- от 0 до 3000 -->
-          <input id="price-ranger" type="range" min="0" max="3000" step="1" value="3000" name="accomodation-price">
-        </div>
+        <fieldset class="filter-price">
+          <legend>Стоимость в сутки (Р):</legend>
+          <!-- копипаста из испытания https://htmlacademy.ru/courses/67/run/3 -->
+          <div class="price-controls">
+            от
+            <input class="min-price" type="text" value="0"> до
+            <input class="max-price" type="text" value="3000">
+          </div>
+          <div class="range-controls">
+            <div class="scale">
+              <div class="bar">
+              </div>
+            </div>
+            <div class="toggle min-toggle"></div>
+            <div class="toggle max-toggle"></div>
+          </div>
+        </fieldset>
         <div class="filter-button">
           <input type="submit" value="Показать">
         </div>
