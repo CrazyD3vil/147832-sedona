@@ -1,0 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+body {
+  font-family: 'PT Sans', sans-serif;
+  width: 1200px;
+}
+
+.feature {
+  background-image: url("http://placehold.it/150x100");
+}
