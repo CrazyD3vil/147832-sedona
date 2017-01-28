@@ -1,9 +1,106 @@
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
-body {
-  font-family: 'PT Sans', sans-serif;
-  width: 1200px;
+@font-face {
+  font-family: 'PT Sans';
+  src: url("../fonts/web/ptsansnarrow.woff2") format("woff2");
+  src: url("../fonts/web/ptsansnarrow.woff") format("woff");
+  src: url("../fonts/web/ptsansnarrowbold.woff2") format("woff2");
+  src: url("../fonts/web/ptsansnarrowbold.woff") format("woff");
 }
 
-.feature {
-  background-image: url("http://placehold.it/150x100");
+body {
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Настраиваем блоки фич Седоны */
+
+div.feature {
+  display: block;
+  width: 400px;
+  height: 330px;
+  margin-right: -4px;
+  background-image: url("../img/index-1200/features-sprite.png");
+  background-repeat: no-repeat;
+}
+
+.feature h2 {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+/* Настраиваем иконки фич Седоны из спрайта */
+
+div.feature-accommodation {
+  background-position: 150px 60px;
+}
+
+div.feature-food {
+  background-position: -250px 60px;
+}
+
+div.feature-souvenirs {
+  background-position: -650px 60px;
+}
+
+
+/* Добалвяем карту Седоны */
+
+div.map {
+  display: block;
+  width: 1200px;
+  height: 593px;
+  background-image: url("../img/index-1200/map.jpg");
+  background-repeat: no-repeat;
+}
+
+
+/*
+Создаем фундамент социальной кнопки, задаем размер и цвет фона
+Убираем текст у социальных кнопок
+Настраиваем иконки социальных кнопок из спрайта
+*/
+
+a.social-btn {
+  display: inline-block;
+  width: 46px;
+  height: 48px;
+  background-color: #81b3d2;
+  margin-right: 2px;
+  background-image: url("../img/social.png");
+  background-repeat: no-repeat;
+}
+
+span.social-btn-text {
+  display: none;
+}
+
+a.social-btn-twitter {
+  background-position: 15px center;
+}
+
+a.social-btn-fb {
+  background-position: -38px center;
+}
+
+a.social-btn-youtube {
+  background-position: -90px center;
+}
+
+
+/* Создаем кнопку-ссылку на сайт академии */
+
+.copyrights a {
+  display: inline-block;
+  width: 113px;
+  height: 39px;
+  background-image: url("../img/footer-htmlacademy-logo.png");
+  background-repeat: no-repeat;
+}
+
+span.copyright-btn-text {
+  display: none;
 }
