@@ -1,146 +1,613 @@
-@font-face {
-  font-family: 'PT Sans';
-  src: url("../fonts/web/ptsansnarrow.woff2") format("woff2");
-  src: url("../fonts/web/ptsansnarrow.woff") format("woff");
-  src: url("../fonts/web/ptsansnarrowbold.woff2") format("woff2");
-  src: url("../fonts/web/ptsansnarrowbold.woff") format("woff");
-}
+            @font-face {
+              font-family: "PT Sans";
+              src: url("../fonts/web/ptsans.woff") format( "woff"), url("../fonts/web/ptsansbold.woff") format("woff");
+            }
 
-body {
-  font-family: 'PT Sans', sans-serif;
-  text-transform: uppercase;
-  width: 1200px;
-  margin: 0;
-  padding: 0;
-}
+            body {
+              font-family: 'PT Sans', sans-serif;
+              font-size: 14px;
+              line-height: 21px;
+              text-transform: uppercase;
+              background-color: #f2f2f2;
+            }
+            /* Распорка */
 
-div.sedona-welcome {
-  display: block;
-  width: 1200px;
-  height: 780px;
-}
+            .clearfix::after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            /* Заливаем всё фоновым цветом */
 
-div.sedona-bigphoto {
-  display: block;
-  background-image: url("../img/index-1200/welcome-photo.jpg");
-  background-size: 1200px 780px;
-  background-repeat: no-repeat;
-  padding-top: 150px;
-}
+            header,
+            main,
+            footer {
+              background-color: #ffffff;
+            }
+            /* Центровщик, задаём ширину страницы */
 
-div.bigphoto-text {
-  display: block;
-  width: 458px;
-  height: 352px;
-  background-image: url("../img/index-1200/welcome-text.png");
-  background-repeat: no-repeat;
-  margin-left: 350px;
-}
+            .container {
+              width: 1200px;
+              padding: 0px 0px;
+              margin: auto auto;
+            }
 
-div.bigphoto-whitemask {
-  display: block;
-  width: 1200px;
-  min-height: 57px;
-  background-image: url("../img/index-1200/welcome-white-mask.png");
-  background-repeat: no-repeat;
-  background-size: 1200px auto;
-}
+            .sixpercent-wrapper {
+              padding: 0px 6%;
+            }
+            /* Лого в навигационном меню */
 
-div.sedona-description {
-  width: 1200px;
-  min-height: 216px;
-  display: block;
-  background-color: #ffffff;
-  margin-top: -22px;
-}
+            a.header-logo {
+              display: block;
+              position: absolute;
+              left: 50%;
+              background-image: url("../img/topmenu-logo.png");
+              background-repeat: no-repeat;
+              width: 138px;
+              min-height: 70px;
+            }
 
+            nav.main-navigation: {
+              min-height: 56px;
+            }
 
-/* Настраиваем блоки фич Седоны */
+            .main-navigation ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
 
-div.feature {
-  display: block;
-  width: 400px;
-  height: 330px;
-  margin-right: -4px;
-  background-image: url("../img/index-1200/features-sprite.png");
-  background-repeat: no-repeat;
-}
+            .main-navigation li {
+              display: inline-block;
+              width: 20%;
+              min-height: 56px;
+            }
 
-.feature h2 {
-  text-align: center;
-  vertical-align: middle;
-}
+            .main-navigation li:nth-child(1) {
+              float: left;
+              padding-left: 6%;
+            }
 
+            .main-navigation li:nth-child(2) {
+              float: left;
+            }
 
-/* Настраиваем иконки фич Седоны из спрайта */
+            .main-navigation li:nth-child(3) {
+              padding-right: 6%;
+            }
 
-div.feature-accommodation {
-  background-position: 150px 60px;
-}
+            .main-navigation li:nth-child(3) a,
+            .main-navigation li:nth-child(4) a {
+              float: right;
+            }
 
-div.feature-food {
-  background-position: -250px 60px;
-}
+            .main-navigation li:nth-child(3),
+            .main-navigation li:nth-child(4) {
+              float: right;
+            }
+            /* Ссылки в навигации - блоки, задаем им размер и стилизуем */
 
-div.feature-souvenirs {
-  background-position: -650px 60px;
-}
+            .main-navigation a {
+              display: inline-block;
+              margin-top: 22px;
+              text-decoration: none;
+              font-weight: bold;
+              color: #000000;
+            }
 
+            div.sedona-welcome {
+              display: block;
+              min-height: 780px;
+            }
 
-/* Добалвяем карту Седоны */
+            div.sedona-bigphoto {
+              display: block;
+              background-image: url("../img/index-1200/welcome-photo.jpg");
+              background-size: 1200px 780px;
+              background-repeat: no-repeat;
+              min-height: 432px;
+              padding-top: 76px;
+            }
 
-div.map {
-  display: block;
-  width: 1200px;
-  height: 593px;
-  background-image: url("../img/index-1200/map.jpg");
-  background-repeat: no-repeat;
-}
+            div.bigphoto-text {
+              display: block;
+              width: 458px;
+              height: 352px;
+              background-image: url("../img/index-1200/welcome-text.png");
+              background-repeat: no-repeat;
+              margin: auto auto;
+            }
 
+            div.bigphoto-whitemask {
+              display: block;
+              min-height: 57px;
+              width: 100%;
+              background-image: url("../img/index-1200/welcome-white-mask.png");
+              background-repeat: no-repeat;
+              margin-top: 23px;
+            }
 
-/*
+            div.sedona-description {
+              display: block;
+              min-height: 216px;
+              background-color: #ffffff;
+            }
+
+            div.description-header {
+              padding-top: 65px;
+            }
+
+            div.description-paragraph {
+              padding-top: 39px;
+            }
+
+            .description-header h1 {
+              text-align: center;
+              font-size: 21px;
+            }
+
+            .description-paragraph p {
+              text-align: center;
+              font-size: 14px;
+            }
+            /* Настраиваем блоки фич Седоны */
+
+            div.fact-section {
+              display: block;
+              min-height: 256px;
+            }
+
+            .fact {
+              color: #ffffff;
+              display: inline-block;
+              min-height: 256px;
+              width: 400px;
+              background-color: #81b3d2;
+            }
+
+            .fact-nophoto {
+              float: left;
+              color: #000000;
+              background-color: #eeeeee;
+            }
+
+            .last-fact {
+              float: right;
+            }
+
+            .fact1 {
+              float: left;
+            }
+
+            .fact2 {
+              float: right;
+            }
+            /* Ровняем текст факта по центру */
+
+            .fact h2,
+            p {
+              text-align: center;
+              margin: 0;
+            }
+
+            .fact h2 {
+              margin-top: 57px;
+            }
+
+            .fact span {
+              display: inline-block;
+              width: 400px;
+              text-align: center;
+              margin-top: 14px;
+            }
+
+            .fact p {
+              margin-top: 32px;
+            }
+
+            div.fact-photo {
+              display: inline-block;
+              background-position: left 325px;
+              width: 800px;
+              height: 256px;
+            }
+
+            .fact-photo1 {
+              float: right;
+              background-image: url("../img/index-1200/realcity-fact.jpg");
+            }
+
+            .fact-photo2 {
+              float: left;
+              background-image: url("../img/index-1200/devilbridge-fact.jpg");
+            }
+
+            div.features-block {
+              display: block;
+              min-height: 330px;
+            }
+
+            div.feature {
+              display: inline-block;
+              width: 400px;
+              min-height: 330px;
+            }
+
+            .feature h2 {
+              margin: 0;
+              margin-top: 32px;
+              margin-bottom: 32px;
+              text-align: center;
+            }
+            /* Настраиваем иконки фич Седоны из спрайта */
+
+            .feature-accommodation,
+            .feature-food {
+              float: left;
+            }
+
+            .feature-souvenirs {
+              float: right;
+            }
+
+            .accommodation-img,
+            .food-img,
+            .souvenirs-img {
+              display: block;
+              margin-top: 60px;
+              margin-left: auto;
+              margin-right: auto;
+              width: 75px;
+              height: 75px;
+              background-repeat: no-repeat;
+            }
+
+            .accommodation-img {
+              background-image: url("../img/index-1200/features-sprite.png");
+              background-position: 0px 0px;
+            }
+
+            .food-img {
+              background-image: url("../img/index-1200/features-sprite.png");
+              background-position: -400px 0px;
+            }
+
+            .souvenirs-img {
+              background-image: url("../img/index-1200/features-sprite.png");
+              background-position: -800px 0px;
+            }
+            /* Добалвяем карту Седоны */
+
+            .facts-textonly {
+              display: block;
+              min-height: 256px;
+            }
+
+            div.interest {
+              min-height: 291px;
+              text-align: center;
+            }
+
+            .interest b {
+              display: inline-block;
+              margin-top: 58px;
+              font-size: 30px;
+              font-weight: bold;
+              line-height: 24px;
+            }
+
+            .interest p {
+              margin-top: 58px;
+              font-size: 14px;
+              line-height: 24px;
+            }
+            /* Кнопка поиска гостиницы */
+
+            .interest button {
+              width: 568px;
+              padding: 0;
+              margin: 0;
+              border: none;
+              min-height: 86px;
+              margin-top: 54px;
+              color: #ffffff;
+              background-color: #766357;
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 21px;
+              line-height: 26px;
+            }
+
+            div.search-popup {
+              font-size: 14px;
+              line-height: 26px;
+              font-weight: bold;
+              background-color: #ffffff;
+              width: 568px;
+              min-height: 395px;
+              position: absolute;
+              margin-left: 316px;
+            }
+
+            .checkin-date,
+            .checkout-date,
+            .people-amount,
+            {
+              width: 100%;
+              min-height: 38px;
+            }
+
+            .checkin-date,
+            .checkout-date,
+            .people-amount span {
+              display: block;
+            }
+
+            .calendar,
+            .amount {
+              display: block;
+              margin: 0;
+              padding: 0;
+              border: none;
+              font-size: 14px;
+              line-height: 26px;
+              font-weight: bold;
+              background-color: #f2f2f2;
+              /*margin-left: 167px;*/
+              padding-left: 12px;
+              box-sizing: border-box;
+            }
+
+            .calendar {
+              width: 346px;
+              height: 38px;
+            }
+
+            .amount {
+              width: 114px;
+              height: 38px;
+              text-align: center;
+            }
+
+            .popup-btn {
+              display: block;
+              margin: 0;
+              padding: 0;
+              border: none;
+              text-transform: uppercase;
+              color: #ffffff;
+              font-size: 21px;
+              line-height: 26px;
+              background-color: #81b3d2;
+              width: 458px;
+              height: 58px;
+              text-align: center;
+              margin-top: 54px;
+              margin-left: 55px;
+            }
+
+            div.map {
+              min-height: 593px;
+              background-image: url("../img/index-1200/map.jpg");
+              background-repeat: no-repeat;
+            }
+            /* Фильтр каталога отелей */
+
+            .filter {
+              color: #ffffff;
+              min-height: 217px;
+              background-image: url("../img/catalog-1200/filter-background.jpg");
+              background-repeat: no-repeat;
+              background-size: 1200px 800px;
+              background-position: 0px -295px;
+            }
+
+            .filter fieldset {
+              border: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            .filter-infrastructure {
+              width: 240px;
+              float: left;
+            }
+
+            .filter-accommodation {
+              width: 288px;
+              float: left;
+            }
+
+            fieldset.filter-price {
+              color: #ffffff;
+              width: 328px;
+              float: right;
+            }
+
+            .price-controls {
+              float: right;
+              width: 318px;
+              min-height: 36px;
+              background-image: url("../img/catalog-1200/price-filter.png");
+              background-repeat: no-repeat;
+            }
+
+            .price-controls input[type="text"] {
+              width: 72px;
+              color: #ffffff;
+              background-color: rgba(255, 255, 255, 0);
+              border: none;
+            }
+
+            .price-controls-fields {
+              display: inline-block;
+              padding-top: 9px;
+              padding-left: 63px;
+            }
+
+            .filter-button input {
+              width: 133px;
+              min-height: 32px;
+              color: #ffffff;
+              font-size: 14px;
+              line-height: 21px;
+              text-transform: uppercase;
+              background-color: rgba(255, 255, 255, 0);
+              border: 2px solid #ffffff;
+              border-radius: 2px;
+              margin-top: 32px;
+              margin-left: 97px;
+            }
+            /* Шапка резултатов поиска отелей */
+
+            .results-header {
+              min-height: 86px;
+              border-bottom: 1px solid #e5e5e5;
+            }
+
+            b.found-total {
+              width: 160px;
+              display: inline-block;
+              float: left;
+            }
+
+            div.sorting-block {
+              float: left;
+            }
+
+            div.sorting-arrows {
+              float: right;
+            }
+            /* Результат поиска отелей */
+
+            .accommodation-result {
+              margin-top: 30px;
+              min-height: 150px;
+              border-bottom: 1px solid #e5e5e5;
+            }
+
+            .accommodation-result img {
+              display: inline-block;
+              float: left;
+            }
+
+            .result-caption {
+              width: 390px;
+              float: left;
+              display: block;
+              margin-left: 30px;
+            }
+
+            .result-caption h2 {
+              margin: 0;
+            }
+
+            .result-btns a {
+              display: inline-block;
+              color: #ffffff;
+              text-decoration: none;
+              text-align: center;
+              font-weight: bold;
+            }
+
+            .moreinfo-btn {
+              width: 110px;
+              min-height: 27px;
+              background-color: #81b3d2;
+            }
+
+            .book-btn {
+              width: 142px;
+              min-height: 27px;
+              background-color: #766357;
+            }
+
+            .result-rating {
+              float: right;
+            }
+
+            span.stars {
+              display: block;
+            }
+            /*
 Создаем фундамент социальной кнопки, задаем размер и цвет фона
 Убираем текст у социальных кнопок
 Настраиваем иконки социальных кнопок из спрайта
 */
 
-a.social-btn {
-  display: inline-block;
-  width: 46px;
-  height: 48px;
-  background-color: #81b3d2;
-  margin-right: 2px;
-  background-image: url("../img/social.png");
-  background-repeat: no-repeat;
-}
+            div.hashtag,
+            div.social,
+            div.copyrights {
+              display: inline-block;
+              min-height: 120px;
+              width: 400px;
+              float: left;
+              text-align: center;
+            }
 
-span.social-btn-text {
-  display: none;
-}
+            div.copyrights {
+              float: right;
+            }
 
-a.social-btn-twitter {
-  background-position: 15px center;
-}
+            .hashtag b {
+              display: inline-block;
+              margin-top: 51px;
+              font-size: 21px;
+              line-height: 26px;
+            }
 
-a.social-btn-fb {
-  background-position: -38px center;
-}
+            a.social-btn {
+              display: inline-block;
+              float: left;
+              width: 46px;
+              height: 48px;
+              background-color: #81b3d2;
+              margin-top: 36px;
+              margin-right: 6px;
+              background-image: url("../img/social.png");
+              background-repeat: no-repeat;
+            }
 
-a.social-btn-youtube {
-  background-position: -90px center;
-}
+            span.social-btn-text {
+              display: none;
+            }
 
+            a.social-btn-twitter {
+              margin-left: 124px;
+              background-position: 15px center;
+            }
 
-/* Создаем кнопку-ссылку на сайт академии */
+            a.social-btn-fb {
+              background-position: -38px center;
+            }
 
-.copyrights a {
-  display: inline-block;
-  width: 113px;
-  height: 39px;
-  background-image: url("../img/footer-htmlacademy-logo.png");
-  background-repeat: no-repeat;
-}
+            a.social-btn-youtube {
+              background-position: -90px center;
+            }
+            /* Создаем кнопку-ссылку на сайт академии */
 
-span.copyright-btn-text {
-  display: none;
-}
+            .copyrights p {
+              min-height: 120px;
+            }
+
+            .copyrights a {
+              display: inline-block;
+              width: 113px;
+              height: 39px;
+              float: left;
+              margin-left: 8px;
+              margin-top: 41px;
+              background-image: url("../img/footer-htmlacademy-logo.png");
+              background-repeat: no-repeat;
+            }
+
+            span.copyrights-text {
+              display: inline-block;
+              float: left;
+              margin-top: 54px;
+              margin-left: 102px;
+            }
+
+            span.copyright-btn-text {
+              display: none;
+            }
