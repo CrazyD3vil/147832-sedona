@@ -4,18 +4,20 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="site-wrapper">
     <header class="main-header">
-      <a class="header-logo" href="index.html"></a>
+      <a class="header-logo"></a>
       <nav class="main-navigation">
         <ul class="clearfix">
           <li><a href="#">Информация</a></li>
           <li><a href="#">Фото и видео</a></li>
-          <li><a href="#">Гостиницы</a></li>
+          <li><a href="catalog.html">Гостиницы</a></li>
           <li><a href="#">Карта штата</a></li>
         </ul>
       </nav>
@@ -24,28 +26,29 @@
       <div class="sedona-welcome">
         <div class="sedona-bigphoto">
           <div class="bigphoto-text">
+            <img src="img/index-1200/welcome-text.png" width="458" height="352" alt="Welcome to the gorgeous SEDONA!">
           </div>
           <div class="bigphoto-whitemask">
           </div>
         </div>
         <div class="sedona-description">
           <div class="description-header">
-            <h1>СЕДОНА — небольшой городок в АРИЗОНЕ, <br> заслуживающий большего!</h1>
+            <h1>СЕДОНА — небольшой городок в АРИЗОНЕ,<br> заслуживающий большего!</h1>
           </div>
           <div class="description-paragraph">
-            <p>Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!</p>
+            <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
           </div>
         </div>
       </div>
       <div class="facts">
         <section class="fact-section">
-          <div class="fact">
+          <div class="fact pictured right-side">
             <h2>Настоящий<br> городок</h2>
-            <span>- №1 -</span>
-            <p>Седона - не атракцион для туристов,
-              <br>там течет своя жизнь</p>
-          </div>
-          <div class="fact-photo fact-photo1">
+            <span>— №1 —</span>
+            <p>Седона — не аттракцион для туристов,
+              <br>там течет своя жизнь
+            </p>
+            <img src="img/index-1200/realcity-fact.jpg" width="800" height="401" alt="Настоящий городок">
           </div>
         </section>
         <div class="features-block">
@@ -68,32 +71,30 @@
               <br> производства!</p>
           </div>
         </div>
-        <section class="fact-section clearfix">
-          <div class="fact-photo fact-photo2">
-          </div>
-          <div class="fact">
+        <section class="fact-section">
+          <div class="fact pictured left-side">
             <h2>Там есть<br>мост дьявола</h2>
-            <span class="fact-number">- №2 -</span>
-            <p>Да, по нему можно пройти! Если конечно
-              <br> вы осмелитесь</p>
+            <span>— №2 —</span>
+            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            <img src="img/index-1200/devilbridge-fact.jpg" width="800" height="400" alt="Мост дьявола">
           </div>
         </section>
         <div class="facts-textonly">
           <div class="fact-nophoto">
             <h2>Небольшая<br> площадь</h2>
-            <span>- №3 -</span>
+            <span>— №3 —</span>
             <p>Все достопримечательности
               <br> находятся очень близко</p>
           </div>
           <div class="fact-nophoto">
             <h2>Красивая<br> дорога</h2>
-            <span>- №4 -</span>
+            <span>— №4 —</span>
             <p>Ехать в Седону из Лас-Вегаса совсем
               <br> не скучно!</p>
           </div>
           <div class="fact-nophoto">
             <h2>Мало<br> туристов</h2>
-            <span>- №5 -</span>
+            <span>— №5 —</span>
             <p>Большинство едет в гранд каньон и
               <br> толпится там</p>
           </div>
@@ -103,34 +104,53 @@
         <div class="interest">
           <b>Заинтересовались?</b>
           <p>Укажите предполагаемые даты поездки,
-            <br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <button class="search-btn">Поиск гостиницы в Седоне</button>
-        </div>
-        <div class="search-popup">
-          <form class="search-settings" action="https://echo.htmlacademy.ru" method="get">
-            <div class="checkin-date clearfix">
-              <span class="search-text">Дата заезда:</span>
-              <input class="calendar" type="date" name="checkin-date" value="2016-04-24">
-            </div>
-            <div class="checkout-date clearfix">
-              <span class="search-text">Дата выезда:</span>
-              <input class="calendar" type="date" name="checkout-date" value="2016-06-04">
-            </div>
-            <div class="people-amount clearfix">
-              <span class="search-text">Взрослые:</span>
-              <input class="amount" type="number" name="adults-amount" value="2">
-              <span class="search-text">Дети:</span>
-              <input class="amount" type="number" name="children-amount" value="0">
-            </div>
-            <input class="popup-btn" type="submit" value="Найти">
-          </form>
+            <br> и мы покажем вам лучшие предложения гостиниц в Седоне
+          </p>
+          <button class="search-btn" onclick="ShowHideSearchPopup('search-popup-id'); return false">Поиск гостиницы в Седоне</button>
+          <div class="search-popup" id="search-popup-id">
+            <form class="search-settings" action="https://echo.htmlacademy.ru" method="get">
+              <div class="checkin-date clearfix">
+                <label for="checkin-date" class="search-text">Дата заезда:</label>
+                <div class="checkin-date-block">
+                  <input class="calendar" type="text" name="checkin-date" id="checkin-date" value="24 апреля 2017">
+                  <input type="button" class="calendar-btn checkin-btn" value="Выбрать дату">
+                </div>
+              </div>
+              <div class="checkout-date clearfix">
+                <label for="checkout-date" class="search-text">Дата выезда:</label>
+                <div class="checkout-date-block">
+                  <input class="calendar" type="text" name="checkout-date" id="checkout-date" value="4 июля 2017">
+                  <input type="button" class="calendar-btn checkin-btn" value="Выбрать дату">
+                </div>
+              </div>
+              <div class="people-amount clearfix">
+                <div class="adults-amount clearfix">
+                  <label for="adults-amount" class="search-text">Взрослые:</label>
+                  <div class="adults-amount-block">
+                    <input type="button" class="amount-btn adults-minus-btn" value="-">
+                    <input class="amount" type="text" name="adults-amount" id="adults-amount" value="2">
+                    <input type="button" class="amount-btn adults-plus-btn" value="+">
+                  </div>
+                </div>
+                <div class="children-amount clearfix">
+                  <label for="children-amount" class="search-text">Дети:</label>
+                  <div class="children-amount-block">
+                    <input type="button" class="amount-btn children-minus-btn" value="-">
+                    <input class="amount" type="text" name="children-amount" id="children-amount" value="0">
+                    <input type="button" class="amount-btn children-plus-btn" value="+">
+                  </div>div>
+                </div>
+              </div>
+              <input class="popup-btn" type="submit" value="Найти">
+            </form>
+          </div>
         </div>
         <div class="map">
-          <!-- Здесь будет карта -->
+          <img src="img/index-1200/map.jpg" width="1200" height="593" alt="Карта">
         </div>
       </div>
     </main>
-    <footer class="clearfix">
+    <footer class="footer-opacity clearfix">
       <div class="hashtag">
         <b>#VISITSEDONA</b>
       </div>
@@ -145,6 +165,7 @@
       </div>
     </footer>
   </div>
+  <script type="text/javascript" src="js/script.js"></script>
 </body>
 
 </html>

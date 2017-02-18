@@ -1,11 +1,5 @@
-  /* @font-face {
-    font-family: "PT Sans";
-    src: url("../fonts/web/ptsans.woff") format( "woff"), url("../fonts/web/ptsansbold.woff") format("woff");
-  }
-*/
-
   body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'PT Sans', 'Arial', sans-serif;
     font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
@@ -24,9 +18,9 @@
   /* Заливаем все основные блоки фоновым цветом */
 
   .site-wrapper {
+    position: relative;
     width: 1200px;
     padding: 0px 0px;
-    background-color: #ffffff;
     margin: auto auto;
     box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.2);
   }
@@ -38,6 +32,8 @@
   /* Лого в навигационном меню */
 
   .main-header {
+    background-color: #ffffff;
+    color: #000000;
     position: relative;
     min-height: 56px;
   }
@@ -45,6 +41,7 @@
   a.header-logo {
     display: block;
     position: absolute;
+    z-index: 100;
     left: 50%;
     margin-left: -69px;
     background-image: url("../img/topmenu-logo.png");
@@ -53,7 +50,7 @@
     min-height: 70px;
   }
 
-  nav.main-navigation: {
+  nav.main-navigation {
     min-height: 56px;
   }
 
@@ -65,9 +62,9 @@
 
   .main-navigation li {
     display: block;
-    padding-top: 14px;
     float: left;
     width: 20%;
+    padding-top: 15px;
   }
 
   .main-navigation li:nth-child(1) {
@@ -87,11 +84,25 @@
   /* Ссылки в навигации - блоки, задаем им размер и стилизуем */
 
   .main-navigation a {
-    font-size: 14px;
     line-height: 26px;
     text-decoration: none;
     font-weight: bold;
     color: #000000;
+  }
+
+  .main-navigation a:hover {
+    color: #81b3d2;
+  }
+
+  .main-navigation a:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  a.menu-active,
+  a.menu-active:hover,
+  a.menu-active:active {
+    color: #766357;
+    cursor: default;
   }
 
   div.sedona-welcome {
@@ -99,28 +110,32 @@
   }
 
   div.sedona-bigphoto {
+    position: relative;
+    background-color: #deedf5;
+    color: #000000;
     background-image: url("../img/index-1200/welcome-photo.jpg");
     background-size: 1200px 800px;
     background-repeat: no-repeat;
     background-position: 0 -83px;
-    min-height: 432px;
-    padding-top: 76px;
+    height: 508px;
   }
 
   div.bigphoto-text {
+    position: absolute;
+    top: 76px;
+    left: 50%;
     width: 458px;
     height: 352px;
-    background-image: url("../img/index-1200/welcome-text.png");
-    background-repeat: no-repeat;
-    margin: auto auto;
+    margin-left: -229px;
   }
 
   div.bigphoto-whitemask {
+    position: absolute;
     min-height: 57px;
     width: 100%;
     background-image: url("../img/index-1200/welcome-white-mask.png");
     background-repeat: no-repeat;
-    margin-top: 23px;
+    bottom: 0px;
   }
 
   div.sedona-description {
@@ -137,7 +152,6 @@
     text-align: center;
     font-size: 21px;
     line-height: 26px;
-    font-weight: bold;
   }
 
   .description-paragraph {
@@ -148,33 +162,49 @@
   }
   /* Настраиваем блоки фич Седоны */
 
-  div.fact-section {
+  .fact-section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
     min-height: 256px;
   }
 
   .fact {
-    float: left;
+    flex: 1 1 calc(34% - 100px);
+    padding: 50px;
     color: #ffffff;
     background-color: #81b3d2;
-    min-height: 256px;
   }
 
-  .fact-photo {
-    background-position: left 323px;
-    width: 800px;
-    height: 256px;
+  .fact.pictured {
+    position: relative;
+    flex-basis: calc(100% - 100px);
+    overflow: hidden;
   }
 
-  .fact-photo1 {
-    float: right;
-    background-image: url("../img/index-1200/realcity-fact.jpg");
-    background-position: left 323px;
+  .fact.pictured img {
+    position: absolute;
+    top: -10px;
+    bottom: 0;
+    width: 66.67%;
+    margin: auto;
+    height: auto;
   }
 
-  .fact-photo2 {
-    float: left;
-    background-image: url("../img/index-1200/devilbridge-fact.jpg");
-    background-position: left 324px;
+  .fact.pictured.right-side {
+    padding-right: calc(66% + 50px);
+  }
+
+  .fact.pictured.right-side img {
+    right: 0;
+  }
+
+  .fact.pictured.left-side {
+    padding-left: calc(66% + 50px);
+  }
+
+  .fact.pictured.left-side img {
+    left: 0;
   }
 
   .facts-textonly {
@@ -183,6 +213,7 @@
 
   .fact-nophoto {
     display: inline-block;
+    vertical-align: top;
     min-height: 256px;
     width: 400px;
     color: #000000;
@@ -193,31 +224,54 @@
   }
   /* Ровняем текст факта по центру */
 
-  .fact h2,
-  p {
-    text-align: center;
+  .fact h2 {
     margin: 0;
-  }
-
-  .fact h2,
-  .fact-nophoto h2 {
+    text-align: center;
     font-size: 21px;
     line-height: 21px;
-    margin-top: 57px;
+    font-weight: bold;
   }
 
   .fact span {
     display: inline-block;
-    width: 400px;
+    width: 100%;
+    vertical-align: top;
     text-align: center;
-    margin-top: 14px;
+    margin-top: 24px;
   }
 
-  .fact p {
-    margin-top: 32px;
+  .fact-nophoto h2,
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .fact-nophoto h2 {
+    font-size: 21px;
+    line-height: 21px;
+    margin-top: 55px;
+    font-weight: bold;
+  }
+
+  .fact-nophoto h2 {
+    margin-top: 47px;
+  }
+
+  .fact-nophoto span {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .fact p,
+  .fact-nophoto p {
+    margin-top: 20px;
   }
 
   div.features-block {
+    background-color: #ffffff;
+    color: #000000;
     font-size: 0;
     min-height: 330px;
   }
@@ -234,9 +288,12 @@
     margin: 0;
     font-size: 21px;
     line-height: 21px;
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 29px;
     text-align: center;
+  }
+
+  .feature p {
+    margin-top: 25px;
   }
   /* Настраиваем иконки фич Седоны из спрайта */
 
@@ -274,96 +331,251 @@
     min-height: 256px;
   }
 
-  div.interest {
-    height: 291px;
+  .interest {
+    background-color: #ffffff;
+    color: #000000;
+    padding-top: 56px;
+    padding-bottom: 86px;
+    min-height: 149px;
     text-align: center;
+    position: relative;
   }
 
   .interest b {
-    display: inline-block;
-    margin-top: 58px;
+    /* display: inline-block;
+    vertical-align: top; */
     font-size: 30px;
     font-weight: bold;
     line-height: 24px;
   }
 
   .interest p {
-    margin-top: 24px;
+    margin-top: 25px;
     font-size: 14px;
     line-height: 24px;
+    padding-bottom: 47px;
   }
   /* Кнопка поиска гостиницы */
 
-  .interest button {
-    width: 568px;
+  .search-btn {
+    min-height: 86px;
     padding: 0;
     margin: 0;
     border: none;
-    min-height: 86px;
-    margin-top: 46px;
+    bottom: 0px;
     color: #ffffff;
     background-color: #766357;
     text-transform: uppercase;
     font-size: 21px;
     line-height: 26px;
     font-weight: bold;
+    text-align: center;
+    cursor: pointer;
   }
 
-  div.search-popup {
+  .search-popup {
+    display: block;
+    min-height: 395px;
+    bottom: -395px;
     font-size: 14px;
     line-height: 26px;
     font-weight: bold;
     background-color: #ffffff;
+  }
+
+  .search-btn,
+  .search-popup {
     width: 568px;
-    min-height: 395px;
     position: absolute;
-    margin-left: 316px;
+    left: 50%;
+    margin-left: -284px;
+  }
+  /* Стилизуем поп-ап */
+
+  .search-settings {
+    /* Центруем */
+    margin: 55px 55px 0 55px;
+    font-size: 0;
   }
 
-  .checkin-date,
-  .checkout-date,
-  .people-amount,
-  {
-    width: 100%;
-    min-height: 38px;
-  }
-
-  .checkin-date,
-  .checkout-date,
-  .people-amount span {
-    display: block;
-  }
-
-  .calendar,
-  .amount {
-    display: block;
-    margin: 0;
-    padding: 0;
-    border: none;
+  .search-text {
     font-size: 14px;
     line-height: 26px;
     font-weight: bold;
-    background-color: #f2f2f2;
-    /*margin-left: 167px;*/
-    padding-left: 12px;
-    box-sizing: border-box;
+    text-align: left;
+    float: left;
+    padding-top: 6px;
   }
 
-  .calendar {
+  .children-amount .search-text {
+    padding-left: 50px;
+  }
+
+  .checkin-date,
+  .checkout-date {
+    width: 458px;
+    height: 38px;
+    margin-bottom: 29px;
+  }
+
+  .checkin-date-block,
+  .checkout-date-block {
+    display: inline-block;
     width: 346px;
     height: 38px;
+    vertical-align: middle;
+    position: relative;
+    float: right;
   }
 
-  .amount {
+  input.calendar {
+    width: 346px;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #f2f2f2;
+    padding-left: 12px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  input.calendar-btn {
+    width: 22px;
+    height: 22px;
+    background-image: url("../img/index-1200/search-calendar-icon-sprite.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 8px;
+    right: 9px;
+    cursor: pointer;
+  }
+
+  input.calendar-btn:hover {
+    background-position: 0 -39px;
+  }
+
+  input.calendar-btn:active {
+    background-position: 0 -77px;
+  }
+
+  .people-amount {
+    width: 458px;
+    height: 38px;
+  }
+
+  .adults-amount {
+    float: left;
+    width: 226px;
+    height: 38px;
+  }
+
+  .children-amount {
+    float: right;
+    width: 229px;
+    height: 38px;
+  }
+
+  .adults-amount-block {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
     width: 114px;
     height: 38px;
+    position: relative;
+  }
+
+  .adults-amount-block input,
+  .children-amount-block input {
+    padding: 0;
+  }
+
+  .children-amount-block {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    width: 114px;
+    height: 38px;
+    position: relative;
+  }
+
+  .amount-btn {
+    display: block;
+    width: 11px;
+    height: 11px;
+    background-image: url("../img/index-1200/search-form-minus_plus_icon.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    color: black;
+    font-size: 45px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 14px;
+    cursor: pointer;
+  }
+
+  .adults-minus-btn,
+  .children-minus-btn {
+    left: 14px;
+  }
+
+  .adults-minus-btn:hover,
+  .children-minus-btn:hover {
+    background-position: 0 -39px;
+  }
+
+  .adults-minus-btn:active,
+  .children-minus-btn:active {
+    background-position: 0 -77px;
+  }
+
+  .adults-plus-btn,
+  .children-plus-btn {
+    background-position: -76px 0;
+    right: 14px;
+  }
+
+  .adults-plus-btn:hover,
+  .children-plus-btn:hover {
+    background-position: -76px -39px;
+    right: 14px;
+  }
+
+  .adults-plus-btn:active,
+  .children-plus-btn:active {
+    background-position: -76px -77px;
+    right: 14px;
+  }
+
+  input.amount {
+    width: 114px;
+    height: 38px;
+    background-color: #f2f2f2;
+    border: none;
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
+    box-sizing: border-box;
+    padding-left: 26px;
+    padding-right: 26px;
   }
 
   .popup-btn {
     display: block;
+    position: absolute;
     margin: 0;
     padding: 0;
+    bottom: 54px;
     border: none;
     text-transform: uppercase;
     color: #ffffff;
@@ -373,14 +585,20 @@
     width: 458px;
     height: 58px;
     text-align: center;
-    margin-top: 54px;
-    margin-left: 55px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .popup-btn:hover {
+    background-color: #669ec0;
+  }
+
+  .popup-btn:active {
+    color: rgba(255, 255, 255, 0.3)
   }
 
   div.map {
-    min-height: 593px;
-    background-image: url("../img/index-1200/map.jpg");
-    background-repeat: no-repeat;
+    height: 593px;
   }
   /* Фильтр каталога отелей */
 
@@ -397,16 +615,80 @@
     border: none;
     padding: 0;
     margin: 0;
+    margin-top: 27px;
+    font-size: 14px;
+    line-height: 21px;
   }
+
+  .filter legend {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: bold;
+  }
+
+  .filter-infrastructure legend,
+  .filter-accommodation legend {
+    margin-bottom: 24px;
+  }
+
+  .filter-price legend {
+    margin-bottom: 10px;
+  }
+  /* ТЕСТ */
+
+  .filter-item {
+    position: relative;
+    margin-bottom: 23px;
+  }
+
+  .filter-item label {
+    padding-left: 40px;
+  }
+
+  .filter-accommodation .filter-item label {
+    padding-left: 41px;
+  }
+  /* Отключаем "Родной" чекбокс */
+
+  .filter-item input[type="checkbox"] {
+    display: none;
+  }
+  /* Устанавливаем изображение "своего" чекбокса */
+
+  .filter-item input[type="checkbox"] + .checkbox-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 22px;
+    background-image: url("../img/catalog-1200/checkboxes.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  /* В состоянии "checked" */
+
+  .filter-item input[type="checkbox"]:checked + .checkbox-indicator {
+    background-position: top right;
+  }
+
+  .filter-item input[type="checkbox"]:disabled + .checkbox-indicator {
+    background-position: bottom left;
+  }
+
+  .filter-item input[type="checkbox"]:checked:disabled + .checkbox-indicator {
+    background-position: bottom right;
+  }
+  /* ТЕСТ ДО СЮДА */
 
   .filter-infrastructure {
     width: 240px;
     float: left;
   }
 
-  .filter-accommodation {
-    width: 288px;
+  fieldset.filter-accommodation {
     float: left;
+    margin-left: 14px;
+    width: 288px;
   }
 
   fieldset.filter-price {
@@ -414,44 +696,135 @@
     width: 328px;
     float: right;
   }
+  /* Фильтр цены */
+
+  .filter-range-title {
+    margin-bottom: 9px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+  }
 
   .price-controls {
-    float: right;
-    width: 318px;
-    min-height: 36px;
-    background-image: url("../img/catalog-1200/price-filter.png");
-    background-repeat: no-repeat;
-  }
-
-  .price-controls input[type="text"] {
-    width: 72px;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-  }
-
-  .price-controls-fields {
-    display: inline-block;
-    padding-top: 9px;
-    padding-left: 63px;
-  }
-
-  .filter-button input {
-    width: 133px;
-    min-height: 32px;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 21px;
-    text-transform: uppercase;
-    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+    width: 314px;
+    height: 32px;
+    margin-bottom: 20px;
+    margin-left: 10px;
     border: 2px solid #ffffff;
     border-radius: 2px;
-    margin-top: 32px;
-    margin-left: 97px;
+    font-size: 0;
   }
-  /* Шапка резултатов поиска отелей */
+
+  .price-controls::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 1px);
+    width: 2px;
+    height: 22px;
+    background: #ffffff;
+    transform: translate(-50%, -50%);
+  }
+
+  .price-controls-block {
+    display: inline-block;
+    vertical-align: top;
+    width: 92px;
+    padding-left: 65px;
+    font-size: 14px;
+    line-height: 21px;
+    padding-top: 5px;
+  }
+
+  .price-controls-block:last-child {
+    width: 103px;
+    padding-left: 54px;
+  }
+
+  .price-controls label {
+    cursor: pointer;
+  }
+
+  .price-controls input {
+    width: 50px;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .range-controls {
+    position: relative;
+    margin-left: 11px;
+    width: 317px;
+    margin-bottom: 32px;
+  }
+
+  .range-controls .scale {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .range-controls .bar {
+    width: 80%;
+    height: 2px;
+    background: #ffffff;
+  }
+
+  .range-toggle {
+    position: absolute;
+    top: -9px;
+    width: 4px;
+    height: 4px;
+    background: #ababab;
+    border: 8px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+    cursor: pointer;
+  }
+
+  .range-toggle:hover {
+    background: #1c4f80;
+  }
+
+  .range-toggle-min {
+    left: 0;
+  }
+
+  .range-toggle-max {
+    left: 80%;
+  }
+  /**/
+
+  .filter-button input {
+    display: block;
+    width: 137px;
+    height: 36px;
+    margin: 0 auto;
+    padding-top: 4px;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .filter-button input:hover {
+    color: #000000;
+    background-color: #ffffff;
+  }
+  /* Шапка результатов поиска отелей */
 
   .results-header {
+    background-color: #ffffff;
+    color: #000000;
     min-height: 86px;
     border-bottom: 1px solid #e5e5e5;
   }
@@ -511,27 +884,48 @@
     border-bottom-style: dotted;
     border-bottom-color: #81b3d2;
   }
+
+  .sorting-block-passive:hover {
+    color: #81b3d2;
+  }
+
+  .sorting-block-passive:active {
+    border: none;
+    color: #000000;
+  }
   /* Стрелки сортировки : */
 
   .sorting-arrows {
     font-size: 0;
-    width: 240px;
     float: right;
-  }
-
-  .sorting-arrows {
-    padding-top: 39px;
+    padding-top: 34px;
+    margin-right: 1px;
     text-align: right;
   }
 
   .arrow {
     display: inline-block;
     vertical-align: top;
+    font-size: 14px;
+    text-decoration: none;
+    color: #cccccc;
     width: 11px;
     height: 10px;
     margin-right: 12px;
-    background-image: url("../img/catalog-1200/sorting.png");
-    background-repeat: no-repeat;
+  }
+
+  .arrow:hover {
+    color: #000000;
+  }
+
+  .arrow:active {
+    color: #81b3d2;
+  }
+
+  .arrow-active,
+  .arrow-active:hover,
+  .arrow-active:active {
+    color: #81b3d2;
   }
 
   .arrow:last-child {
@@ -546,6 +940,11 @@
     background-position: -28px -66px;
   }
   /* Результат поиска отелей */
+
+  main {
+    background-color: #ffffff;
+    color: #000000;
+  }
 
   .accommodation-result {
     margin-top: 30px;
@@ -568,13 +967,28 @@
     vertical-align: top;
     margin-left: 26px;
   }
+  /* Состояния ссылок-названий вариантов размещения */
 
-  .result-caption h2 {
+  a.result-hotelname {
     display: block;
+    text-decoration: none;
+    font-size: 21px;
+    line-height: 26px;
+    color: #000000;
+    font-weight: bold;
     margin: 0;
-    margin-top: -3px;
-    margin-bottom: 10px;
+    margin-top: -5px;
+    margin-bottom: 8px;
   }
+
+  a.result-hotelname:hover {
+    color: #81b3d2;
+  }
+
+  a.result-hotelname:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+  /*Блок с указанием типа размещения и его цены */
 
   .result-caption span {
     display: inline-block;
@@ -591,9 +1005,10 @@
     width: 142px;
     margin-left: 2px;
   }
+  /* Блок кнопок ПОДРОБНЕЕ и ЗАБРОНИРОВАТЬ */
 
   div.result-btns {
-    margin-top: 14px;
+    margin-top: 13px;
   }
 
   .result-btns a {
@@ -606,12 +1021,24 @@
     font-weight: bold;
     box-sizing: border-box;
   }
+  /* ПОДРОБНЕЕ */
 
   .moreinfo-btn {
+    margin-left: 1px;
     width: 110px;
     height: 27px;
     background-color: #81b3d2;
   }
+
+  .moreinfo-btn:hover {
+    background-color: #669ec0;
+  }
+
+  .moreinfo-btn:active {
+    background-color: #669ec0;
+    color: rgba(255, 255, 255, 0.3);
+  }
+  /* ЗАБРОНИРОВАТЬ */
 
   .book-btn {
     margin-left: 2px;
@@ -619,55 +1046,67 @@
     height: 27px;
     background-color: #766357;
   }
+
+  .book-btn:hover {
+    background-color: #604e43;
+  }
+
+  .book-btn:active {
+    background-color: #604e43;
+    color: rgba(255, 255, 255, 0.3);
+  }
   /* Звёзды отелей*/
 
   div.result-rating {
-    width: 111px;
+    position: relative;
+    width: 241px;
+    height: 90px;
     float: right;
   }
 
   span.stars {
-    font-size: 0;
-    display: block;
+    position: absolute;
+    top: 8.5px;
+    right: -3px;
     width: 95px;
     height: 17px;
-    background-image: url("../img/catalog-1200/stars.png");
-    background-repeat: no-repeat;
-    margin-left: 22px;
-  }
-
-  .stars-4 {
-    background-position: 0px;
-  }
-
-  .stars-3 {
-    background-position: 24px;
-  }
-
-  .stars-2 {
-    background-position: 48px;
-  }
-
-  .stars-1 {
-    background-position: 72px;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-align: right;
+    line-height: 0;
+    color: #81b3d2;
   }
 
   .textrating {
     display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     box-sizing: border-box;
     width: 110px;
     height: 27px;
+    padding-top: 4px;
     color: #666666;
     text-align: center;
     background-color: #f2f2f2;
-    margin-top: 47px;
-    padding-top: 2.5px;
   }
   /*
 Создаем фундамент социальной кнопки, задаем размер и цвет фона
 Убираем текст у социальных кнопок
 Настраиваем иконки социальных кнопок из спрайта
 */
+
+  footer {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .footer-opacity {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000;
+  }
 
   div.hashtag,
   div.social,
@@ -689,13 +1128,16 @@
     line-height: 26px;
     font-weight: bold;
   }
+  /* Кнопки соцсетей */
 
   .social {
+    margin-left: -1px;
     font-size: 0;
   }
 
   a.social-btn {
     display: inline-block;
+    vertical-align: top;
     width: 46px;
     height: 48px;
     background-color: #81b3d2;
@@ -712,17 +1154,35 @@
   span.social-btn-text {
     display: none;
   }
+  /* Состояния соцсетей */
+
+  a.social-btn:hover,
+  a.social-btn:active {
+    background-color: #669ec0;
+  }
 
   a.social-btn-twitter {
-    background-position: 15px center;
+    background-position: 15px 13px;
+  }
+
+  a.social-btn-twitter:active {
+    background-position: 15px -43px;
   }
 
   a.social-btn-fb {
-    background-position: -38px center;
+    background-position: -38px 13px;
+  }
+
+  a.social-btn-fb:active {
+    background-position: -38px -43px;
   }
 
   a.social-btn-youtube {
-    background-position: -90px center;
+    background-position: -90px 13px;
+  }
+
+  a.social-btn-youtube:active {
+    background-position: -90px -43px;
   }
   /* Создаем кнопку-ссылку на сайт академии */
 
@@ -732,12 +1192,22 @@
 
   .copyrights a {
     display: inline-block;
+    vertical-align: top;
     width: 113px;
     height: 39px;
     margin-left: 8px;
     background-image: url("../img/footer-htmlacademy-logo.png");
     background-repeat: no-repeat;
+    background-position: 0px 0px;
     vertical-align: middle;
+  }
+
+  .copyrights a:hover {
+    background-position: 0 -48px;
+  }
+
+  .copyrights a:active {
+    background-position: 0 -95px;
   }
 
   span.copyrights-text {
