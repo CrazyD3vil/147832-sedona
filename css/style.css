@@ -654,6 +654,10 @@
   }
   /* Устанавливаем изображение "своего" чекбокса */
 
+  .checkbox-indicator {
+    cursor: pointer;
+  }
+
   .filter-item input[type="checkbox"] + .checkbox-indicator {
     position: absolute;
     top: 0;
