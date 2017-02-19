@@ -146,6 +146,8 @@
   }
 
   div.description-header {
+    width: 576px;
+    margin: 0 auto;
     padding-top: 60px;
   }
 
@@ -227,11 +229,12 @@
   /* Ровняем текст факта по центру */
 
   .fact h2 {
-    margin: 0;
     text-align: center;
     font-size: 21px;
     line-height: 21px;
     font-weight: bold;
+    width: 151px;
+    margin: 0 auto;
   }
 
   .fact span {
@@ -249,14 +252,12 @@
   }
 
   .fact-nophoto h2 {
+    width: 118px;
+    margin: 0 auto;
     font-size: 21px;
     line-height: 21px;
-    margin-top: 55px;
-    font-weight: bold;
-  }
-
-  .fact-nophoto h2 {
     margin-top: 47px;
+    font-weight: bold;
   }
 
   .fact-nophoto span {
@@ -266,8 +267,15 @@
     margin-top: 24px;
   }
 
-  .fact p,
+  .fact p {
+    width: 304px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
   .fact-nophoto p {
+    width: 262px;
+    margin: 0 auto;
     margin-top: 20px;
   }
 
@@ -296,7 +304,8 @@
   }
 
   .feature p {
-    margin-top: 25px;
+    width: 300px;
+    margin: 25px auto;
   }
   /* Настраиваем иконки фич Седоны из спрайта */
 
@@ -354,6 +363,8 @@
   }
 
   .interest p {
+    width: 576px;
+    margin: 0 auto;
     margin-top: 25px;
     font-size: 14px;
     line-height: 24px;
