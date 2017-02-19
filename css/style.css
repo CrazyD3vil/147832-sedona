@@ -170,7 +170,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    min-height: 256px;
+    height: 256px;
   }
 
   .fact {
@@ -529,7 +529,7 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     color: black;
-    font-size: 45px;
+    font-size: 0;
     background-color: transparent;
     border: none;
     position: absolute;
