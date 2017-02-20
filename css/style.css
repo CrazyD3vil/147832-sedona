@@ -146,7 +146,7 @@
   }
 
   div.description-header {
-    width: 576px;
+    padding: 0px 316px;
     margin: 0 auto;
     padding-top: 60px;
   }
@@ -170,19 +170,21 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    height: 256px;
+    min-height: 256px;
   }
 
   .fact {
-    flex: 1 1 calc(34% - 100px);
-    padding: 50px;
+    flex: 1 1 calc(33.33% - 96px);
+    padding: 0 48px;
+    padding-top: 55px;
+    padding-bottom: 52px;
     color: #ffffff;
     background-color: #81b3d2;
   }
 
   .fact.pictured {
     position: relative;
-    flex-basis: calc(100% - 100px);
+    flex-basis: calc(100% - 96px);
     overflow: hidden;
   }
 
@@ -196,7 +198,7 @@
   }
 
   .fact.pictured.right-side {
-    padding-right: calc(66% + 50px);
+    padding-right: calc(66.67% + 48px);
   }
 
   .fact.pictured.right-side img {
@@ -204,15 +206,11 @@
   }
 
   .fact.pictured.left-side {
-    padding-left: calc(66% + 50px);
+    padding-left: calc(66.67% + 48px);
   }
 
   .fact.pictured.left-side img {
     left: 0;
-  }
-
-  .facts-textonly {
-    font-size: 0;
   }
 
   .fact-nophoto {
@@ -268,15 +266,14 @@
   }
 
   .fact p {
-    width: 304px;
     margin: 0 auto;
     margin-top: 20px;
   }
 
   .fact-nophoto p {
-    width: 262px;
     margin: 0 auto;
     margin-top: 20px;
+    padding: 0 69px;
   }
 
   div.features-block {
@@ -304,7 +301,7 @@
   }
 
   .feature p {
-    width: 300px;
+    padding: 0 50px;
     margin: 25px auto;
   }
   /* Настраиваем иконки фич Седоны из спрайта */
@@ -340,13 +337,14 @@
   /* Добалвяем карту Седоны */
 
   .facts-textonly {
-    display: block;
+    font-size: 0;
     min-height: 256px;
   }
 
   .interest {
     background-color: #ffffff;
     color: #000000;
+    padding: 0 316px;
     padding-top: 56px;
     padding-bottom: 86px;
     min-height: 149px;
@@ -363,12 +361,12 @@
   }
 
   .interest p {
-    width: 576px;
     margin: 0 auto;
     margin-top: 25px;
     font-size: 14px;
     line-height: 24px;
     padding-bottom: 47px;
+    text-align: center;
   }
   /* Кнопка поиска гостиницы */
 
@@ -411,6 +409,10 @@
     /* Центруем */
     margin: 55px 55px 0 55px;
     font-size: 0;
+  }
+
+  .search-settings input {
+    outline: none;
   }
 
   .search-text {
@@ -653,11 +655,7 @@
 
   .filter-item {
     position: relative;
-    margin-bottom: 23px;
-  }
-
-  .filter-item label {
-    padding-left: 40px;
+    margin-bottom: 24px;
   }
 
   .filter-accommodation .filter-item label {
@@ -683,20 +681,19 @@
     background-image: url("../img/catalog-1200/checkboxes.png");
     background-color: transparent;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: left top;
   }
-  /* В состоянии "checked" */
 
   .filter-item input[type="checkbox"]:checked + .checkbox-indicator {
-    background-position: top right;
+    background-position: right top;
   }
 
   .filter-item input[type="checkbox"]:disabled + .checkbox-indicator {
-    background-position: bottom left;
+    background-position: left bottom;
   }
 
   .filter-item input[type="checkbox"]:checked:disabled + .checkbox-indicator {
-    background-position: bottom right;
+    background-position: right bottom;
   }
 
   .filter-infrastructure {
@@ -704,10 +701,30 @@
     float: left;
   }
 
+  .filter-infrastructure .filter-item {
+    margin-bottom: 24px;
+  }
+
+  .filter-infrastructure .filter-item:nth-child(3) {
+    margin-bottom: 25px;
+  }
+
+  .filter-item label {
+    padding-left: 40px;
+  }
+
   fieldset.filter-accommodation {
     float: left;
-    margin-left: 14px;
+    margin-left: 15px;
     width: 288px;
+  }
+
+  .filter-accommodation .filter-item {
+    margin-bottom: 25px;
+  }
+
+  .filter-accommodation .filter-item:nth-child(3) {
+    margin-bottom: 24px;
   }
 
   fieldset.filter-price {
@@ -1082,8 +1099,7 @@
     height: 90px;
     float: right;
   }
-
-  span.stars {
+  /*span.stars {
     position: absolute;
     top: 8.5px;
     right: -3px;
@@ -1094,6 +1110,31 @@
     text-align: right;
     line-height: 0;
     color: #81b3d2;
+  }*/
+
+  span.stars {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0;
+    text-align: right;
+    background-image: url("../img/catalog-1200/stars.png");
+    background-repeat: no-repeat;
+  }
+
+  .four-stars {
+    width: 89px;
+    height: 17px;
+  }
+
+  .three-stars {
+    width: 65px;
+    height: 17px;
+  }
+
+  .two-stars {
+    width: 42px;
+    height: 17px;
   }
 
   .textrating {
