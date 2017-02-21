@@ -72,17 +72,17 @@
     padding-top: 15px;
   }
 
-  .main-navigation li:nth-child(1) {
+  .main-navigation li:nth-child(4n+1) {
     padding-left: 6%;
   }
 
-  .main-navigation li:nth-child(3) {
+  .main-navigation li:nth-child(4n-1) {
     float: right;
     padding-right: 6%;
     text-align: right;
   }
 
-  .main-navigation li:nth-child(4) {
+  .main-navigation li:nth-child(4n) {
     float: right;
     text-align: right;
   }
@@ -144,18 +144,9 @@
     height: 352px;
     margin-left: -229px;
   }
-  /* div.bigphoto-whitemask {
-    position: absolute;
-    min-height: 57px;
-    width: 100%;
-    background-image: url("../img/index-1200/welcome-white-mask.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    bottom: 0px;
-  } */
 
   div.sedona-description {
-    height: 216px;
+    min-height: 216px;
     background-color: #ffffff;
   }
 
@@ -177,6 +168,7 @@
     line-height: 26px;
     text-align: center;
     padding-top: 28px;
+    padding-bottom: 50px;
   }
   /* Настраиваем блоки фич Седоны */
 
@@ -233,7 +225,6 @@
     min-height: 256px;
     width: 400px;
     color: #000000;
-    background-color: #eeeeee;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
@@ -288,6 +279,7 @@
     margin: 0 auto;
     margin-top: 20px;
     padding: 0 69px;
+    padding-bottom: 60px;
   }
 
   div.features-block {
@@ -353,6 +345,7 @@
   .facts-textonly {
     font-size: 0;
     min-height: 256px;
+    background-color: #eeeeee;
   }
 
   .interest {
@@ -950,7 +943,7 @@
 
   .sorting-block {
     float: left;
-    width: 288px;
+    width: 740px;
     padding-top: 35px;
     padding-left: 38px;
     font-size: 12px;
@@ -1047,17 +1040,20 @@
   }
 
   .result-leftpart {
-    width: 528px;
+    width: 815px;
+    padding-bottom: 30px;
     float: left;
   }
 
-  .accommodation-result img {
+  .result-hotelpic {
     display: inline-block;
     vertical-align: top;
+    height: 90px;
   }
 
   .result-caption {
     display: inline-block;
+    width: 650px;
     vertical-align: top;
     margin-left: 26px;
   }
@@ -1091,12 +1087,18 @@
     line-height: 21px;
   }
 
-  span.result-type {
+  .result-type {
+    display: inline-block;
+    vertical-align: top;
     width: 110px;
+    word-wrap: break-word;
   }
 
-  span.result-startprice {
+  .result-startprice {
+    display: inline-block;
+    vertical-align: top;
     width: 142px;
+    word-wrap: break-word;
     margin-left: 2px;
   }
   /* Блок кнопок ПОДРОБНЕЕ и ЗАБРОНИРОВАТЬ */
