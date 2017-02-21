@@ -673,23 +673,50 @@
   .filter-item {
     position: relative;
     margin-bottom: 24px;
+    font-size: 0;
   }
 
-  .filter-accommodation .filter-item label {
-    padding-left: 41px;
+  .filter-infrastructure .filter-item {
+    margin-bottom: 24px;
+  }
+
+  .filter-infrastructure .filter-item:nth-child(3) {
+    margin-bottom: 25px;
+  }
+
+  .filter-accommodation .filter-item {
+    margin-bottom: 25px;
+  }
+
+  .filter-accommodation .filter-item:nth-child(3) {
+    margin-bottom: 24px;
+  }
+
+  .checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+    padding-left: 26px;
+  }
+
+  .filter-accommodation .checkbox-label {
+    padding-left: 28px;
   }
   /* Отключаем "Родной" чекбокс */
 
   .filter-item input[type="checkbox"] {
-    display: none;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: hidden;
   }
   /* Устанавливаем изображение "своего" чекбокса */
 
-  .checkbox-indicator {
+  .filter-item input[type="checkbox"] + .checkbox-label::before {
+    content: "";
     cursor: pointer;
-  }
-
-  .filter-item input[type="checkbox"] + .checkbox-indicator {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -701,15 +728,15 @@
     background-position: left top;
   }
 
-  .filter-item input[type="checkbox"]:checked + .checkbox-indicator {
+  .filter-item input[type="checkbox"]:checked + .checkbox-label::before {
     background-position: right top;
   }
 
-  .filter-item input[type="checkbox"]:disabled + .checkbox-indicator {
+  .filter-item input[type="checkbox"]:disabled + + .checkbox-label::before {
     background-position: left bottom;
   }
 
-  .filter-item input[type="checkbox"]:checked:disabled + .checkbox-indicator {
+  .filter-item input[type="checkbox"]:checked:disabled + + .checkbox-label::before {
     background-position: right bottom;
   }
 
@@ -718,30 +745,10 @@
     float: left;
   }
 
-  .filter-infrastructure .filter-item {
-    margin-bottom: 24px;
-  }
-
-  .filter-infrastructure .filter-item:nth-child(3) {
-    margin-bottom: 25px;
-  }
-
-  .filter-item label {
-    padding-left: 40px;
-  }
-
   fieldset.filter-accommodation {
     float: left;
     margin-left: 15px;
     width: 288px;
-  }
-
-  .filter-accommodation .filter-item {
-    margin-bottom: 25px;
-  }
-
-  .filter-accommodation .filter-item:nth-child(3) {
-    margin-bottom: 24px;
   }
 
   fieldset.filter-price {
