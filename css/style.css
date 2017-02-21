@@ -204,11 +204,11 @@
 
   .fact.pictured img {
     position: absolute;
-    top: -10px;
+    object-fit: cover;
+    top: 0;
     bottom: 0;
     width: 66.67%;
-    margin: auto;
-    height: auto;
+    margin: auto 0;
   }
 
   .fact.pictured.right-side {
